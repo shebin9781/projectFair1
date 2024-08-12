@@ -13,7 +13,7 @@ import { editResponesContext } from '../contexts/ContextAPI';
 
 function Edit({project}) {
 
-  const {editResponse,setEditResponse} = useContext(editResponesContext)
+  const {editRespones,setEditRespones} = useContext(editResponesContext)
   const [projectData , setProjectData] = useState({
    id:project?._id,  title:project?.title,language:project?.language,overview:project?.overview,github:project?.github,website:project?.website,projectImage:""
   })
@@ -67,7 +67,7 @@ function Edit({project}) {
           if(result.status==200){
             handleClose()
             //pass respones view
-            setEditResponse(result)
+            setEditRespones(result)
           }else{
             console.log(result.respones);
             

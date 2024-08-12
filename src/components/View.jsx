@@ -5,14 +5,14 @@ import { getUserProjectsAPI, removeProjectAPI } from '../services/allAPI';
 import { addResponseContext, editResponesContext } from '../contexts/ContextAPI';
 
 function View() {
-  const {editResponse,setEditResponse} =  useContext(editResponesContext)
+  const {editRespones,setEditRespones} =  useContext(editResponesContext)
   const {addResponse,setAddResponse} = useContext(addResponseContext)
   const [userProjects,setUserProjects] = useState([])
   console.log(userProjects);
 
   useEffect(() => {
     getUserprojects()
-  }, [addResponse,editResponse])
+  },[addResponse,editRespones])
 
   const getUserprojects = async ()=>{
     const token = sessionStorage.getItem("token")
